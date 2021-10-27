@@ -20,7 +20,8 @@ public class Pantalla_Inicial extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_inicial);
-
+        getSupportActionBar().hide();
+        
         nTarea = findViewById(R.id.eT_NTarea);
         descripcion = findViewById(R.id.etDescripcion);
         fecha = findViewById(R.id.et_fecha);

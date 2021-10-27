@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         et_P = findViewById(R.id.eT_P);
         et_N = findViewById(R.id.eT_N);
         setLogin("Admin","1234");
+        getSupportActionBar().hide();
 
 
     }
