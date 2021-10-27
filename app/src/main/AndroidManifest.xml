@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RetoAndroid">
         <activity
+            android:name=".Pantalla_Inicial"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
