@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private TextView et_N ;
@@ -25,7 +26,21 @@ public class MainActivity extends AppCompatActivity {
     }
     public void pInicial(View view) {
         Intent i = new Intent(this, Pantalla_Inicial.class );
-        startActivity(i);
+
+        et_P = findViewById(R.id.eT_P);
+        et_N = findViewById(R.id.eT_N);
+        Toast notificacion= Toast.makeText(this,"Usuario o contraseña erróneos",Toast.LENGTH_LONG);
+
+        if(et_N.getText().toString().equals(getLoginUsuario()) && et_P.getText().toString().equals(getLoginContraseña())){
+            startActivity(i);
+
+        }else{
+
+
+            notificacion.show();
+        }
+
+
     }
 
     public void setLogin(String usuario, String contraseña){
@@ -35,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("user",usuario);
         editor.putString("pass",contraseña);
+
+        editor.apply();
     }
 
     public String getLoginUsuario(){
