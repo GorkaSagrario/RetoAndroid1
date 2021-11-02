@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -15,6 +16,8 @@ public class Pantalla_Inicial extends AppCompatActivity {
     private TextView fecha;
     private TextView coste;
     private Spinner spinner;
+    private RadioButton hecha;
+    private RadioButton sinhacer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +36,20 @@ public class Pantalla_Inicial extends AppCompatActivity {
                 ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, option);
         spinner.setAdapter(adapter);
 
+        hecha = findViewById(R.id.radioHecha);
+        sinhacer = findViewById(R.id.radioSinHacer);
+
+
+
     }
     public void pLogin(View view) {
         Intent i = new Intent(this, MainActivity.class );
         startActivity(i);
     }
+
+    public void onClickBotonGuardar() {
+
+
+    }
+
 }

@@ -77,16 +77,16 @@
         app:layout_constraintTop_toBottomOf="@+id/spinner">
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioHecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Hecha" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioSinHacer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Sin hacer" />
     </RadioGroup>
 
     <Button
