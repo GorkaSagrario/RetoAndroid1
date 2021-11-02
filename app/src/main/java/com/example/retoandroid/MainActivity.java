@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setLogin("Admin","1234");
         getSupportActionBar().hide();
 
+        AdminSQLiteOpenHelper sql = new AdminSQLiteOpenHelper(this,"bd_tareas",null,1);
+
 
     }
     public void pInicial(View view) {

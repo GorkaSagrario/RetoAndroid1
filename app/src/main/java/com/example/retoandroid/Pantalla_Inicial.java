@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -18,12 +19,15 @@ public class Pantalla_Inicial extends AppCompatActivity {
     private Spinner spinner;
     private RadioButton hecha;
     private RadioButton sinhacer;
+    private Button enviar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_inicial);
         getSupportActionBar().hide();
+
+        enviar = findViewById(R.id.botonEnviar);
         
         nTarea = findViewById(R.id.eT_NTarea);
         descripcion = findViewById(R.id.etDescripcion);
@@ -39,6 +43,12 @@ public class Pantalla_Inicial extends AppCompatActivity {
         hecha = findViewById(R.id.radioHecha);
         sinhacer = findViewById(R.id.radioSinHacer);
 
+        enviar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                onClickBotonGuardar();
+            }
+        });
+
 
 
     }
@@ -48,6 +58,8 @@ public class Pantalla_Inicial extends AppCompatActivity {
     }
 
     public void onClickBotonGuardar() {
+
+
 
 
     }
