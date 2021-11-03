@@ -53,7 +53,7 @@ public class AgregarTarea extends AppCompatActivity {
 
     }
     public void pLogin(View view) {
-        Intent i = new Intent(this, MainActivity.class );
+        Intent i = new Intent(this, MenuNavegacion.class );
         startActivity(i);
     }
 
