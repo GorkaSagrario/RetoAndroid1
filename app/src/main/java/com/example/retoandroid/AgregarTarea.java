@@ -119,6 +119,9 @@ public class AgregarTarea extends AppCompatActivity {
 
         }
 
+        long newRowId = db.insert("tareas", null, cv);
+
+
         Toast notificacion=Toast.makeText(this,"Actividad registrada",Toast.LENGTH_LONG);
 
         notificacion.show();
