@@ -19,4 +19,9 @@ public class MenuNavegacion extends AppCompatActivity {
         Intent i = new Intent(this, AgregarTarea.class );
         startActivity(i);
     }
+
+    public void ListadoDeTarea(View view) {
+        Intent i = new Intent(this, ListadoDeTareas.class );
+        startActivity(i);
+    }
 }
