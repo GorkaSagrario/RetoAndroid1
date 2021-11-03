@@ -5,11 +5,11 @@ public class Tarea {
     private String nombre;
     private String descripcion;
     private String fecha;
-    private Double coste;
+    private String coste;
     private String prioridad;
     private String estado;
 
-    public Tarea(String nombre, String descripcion, String fecha, Double coste, String prioridad, String estado) {
+    public Tarea(String nombre, String descripcion, String fecha, String coste, String prioridad, String estado) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fecha = fecha;
@@ -42,11 +42,11 @@ public class Tarea {
         this.fecha = fecha;
     }
 
-    public Double getCoste() {
+    public String getCoste() {
         return coste;
     }
 
-    public void setCoste(Double coste) {
+    public void setCoste(String coste) {
         this.coste = coste;
     }
 

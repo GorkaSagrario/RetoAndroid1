@@ -2,7 +2,9 @@ package com.example.retoandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AgregarTarea extends AppCompatActivity {
     private TextView nTarea;
@@ -59,9 +62,72 @@ public class AgregarTarea extends AppCompatActivity {
 
     public void onClickBotonGuardar() {
 
+        validarDatos();
 
+    }
+
+    public void validarDatos(){
+
+        boolean validado = true;
+
+        Toast notificacion=Toast.makeText(this,"Faltan campos por rellenar",Toast.LENGTH_LONG);
+
+        if(nTarea.getText().toString().equals("") || descripcion.getText().toString().equals("") || fecha.getText().toString().equals("") || coste.getText().toString().equals("")){
+
+            validado = false;
+        }
+
+        if(!hecha.isChecked() && !sinhacer.isChecked()){
+
+            validado = false;
+        }
+
+
+        if(validado){
+
+            registrarDatos();
+        }else{
+
+            notificacion.show();
+
+        }
 
 
     }
+
+    public void registrarDatos(){
+
+        AdminSQLiteOpenHelper sql = new AdminSQLiteOpenHelper(this,"bd_tareas",null,1);
+
+        SQLiteDatabase db = sql.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+
+        cv.put("nombre",nTarea.getText().toString());
+        cv.put("descripcion",descripcion.getText().toString());
+        cv.put("fecha",fecha.getText().toString());
+        cv.put("coste",coste.getText().toString());
+        cv.put("prioridad",spinner.getSelectedItem().toString());
+
+        if(hecha.isChecked()){
+
+            cv.put("estado","Hecha");
+
+        }else{
+
+            cv.put("estado","Sin hacer");
+
+        }
+
+        Toast notificacion=Toast.makeText(this,"Actividad registrada",Toast.LENGTH_LONG);
+
+        notificacion.show();
+
+        Intent i = new Intent(this, MenuNavegacion.class );
+        startActivity(i);
+
+    }
+
+
 
 }
