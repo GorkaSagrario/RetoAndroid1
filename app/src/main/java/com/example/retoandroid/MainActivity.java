@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void pInicial(View view) {
-        Intent i = new Intent(this, Pantalla_Inicial.class );
+        Intent i = new Intent(this, MenuNavegacion.class );
 
         et_P = findViewById(R.id.eT_P);
         et_N = findViewById(R.id.eT_N);

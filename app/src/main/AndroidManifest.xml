@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RetoAndroid">
         <activity
-            android:name=".Pantalla_Inicial"
+            android:name=".MenuNavegacion"
+            android:exported="true" />
+        <activity
+            android:name=".AgregarTarea"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

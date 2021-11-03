@@ -11,7 +11,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class Pantalla_Inicial extends AppCompatActivity {
+public class AgregarTarea extends AppCompatActivity {
     private TextView nTarea;
     private TextView descripcion;
     private TextView fecha;
