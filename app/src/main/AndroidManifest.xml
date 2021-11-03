@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RetoAndroid">
         <activity
+            android:name=".ListadoDeTareas"
+            android:exported="true" />
+        <activity
             android:name=".MenuNavegacion"
             android:exported="true" />
         <activity
