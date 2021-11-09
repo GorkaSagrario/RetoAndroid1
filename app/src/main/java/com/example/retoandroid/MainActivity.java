@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void pInicial(View view) {
-        Intent i = new Intent(this, MenuNavegacion.class );
-
+        Intent i = new Intent(this, ListadoDeTareas.class );
         et_P = findViewById(R.id.eT_P);
         et_N = findViewById(R.id.eT_N);
         Toast notificacion= Toast.makeText(this,"Usuario o contraseña erróneos",Toast.LENGTH_LONG);

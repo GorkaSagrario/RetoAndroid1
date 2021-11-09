@@ -56,8 +56,9 @@ public class AgregarTarea extends AppCompatActivity {
 
     }
     public void pLogin(View view) {
-        Intent i = new Intent(this, MenuNavegacion.class );
+        Intent i = new Intent(this, ListadoDeTareas.class );
         startActivity(i);
+        finish();
     }
 
     public void onClickBotonGuardar() {
@@ -126,8 +127,9 @@ public class AgregarTarea extends AppCompatActivity {
 
         notificacion.show();
 
-        Intent i = new Intent(this, MenuNavegacion.class );
+        Intent i = new Intent(this, ListadoDeTareas.class );
         startActivity(i);
+        finish();
 
     }
 
