@@ -13,6 +13,9 @@
             android:name=".CambiarContrasena"
             android:exported="true" />
         <activity
+            android:name=".TareaDelListado"
+            android:exported="true" />
+        <activity
             android:name=".ListadoDeTareas"
             android:exported="true" />
         <activity
