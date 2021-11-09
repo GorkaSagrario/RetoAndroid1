@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
 
     final String CREAR_TABLA_TAREAS = "create table tareas (nombre text primary key, descripcion text, fecha text, coste text, prioridad text, estado text )";
@@ -33,10 +35,12 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
 
     }
 
-    public String fetchAllData(){
+    public ArrayList<Tarea> fetchAllData(){
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery("select * from tareas", null, null);
+
+        ArrayList <Tarea> arrayTareas = new ArrayList<>();
 
         String nombre = null;
         String descripcion = null;
@@ -53,10 +57,11 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper{
             coste = c.getString(3);
             prioridad = c.getString(4);
             estado = c.getString(5);
-
+            Tarea t = new Tarea(nombre,descripcion,fecha,coste,prioridad,estado);
+            arrayTareas.add(t);
         }
 
-        return nombre;
+        return arrayTareas;
 
 
 
