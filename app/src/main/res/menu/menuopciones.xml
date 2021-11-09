@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nTarea"
+        android:title="Nueva Tarea" />
+    <item
+        android:id="@+id/cPass"
+        android:title="Cambiar Contraseña" />
+    <item
+        android:id="@+id/acercaDe"
+        android:title="Acerca de" />
+    <item
+        android:id="@+id/desconectar"
+        android:title="Desconectar" />
+</menu>
