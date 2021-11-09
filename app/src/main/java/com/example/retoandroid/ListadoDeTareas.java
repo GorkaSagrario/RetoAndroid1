@@ -61,8 +61,6 @@ public class ListadoDeTareas extends AppCompatActivity {
 
         }
         if (id==R.id.desconectar) {
-            Intent i = new Intent(this, MainActivity.class );
-            startActivity(i);
             finish();
         }
         return super.onOptionsItemSelected(item);
