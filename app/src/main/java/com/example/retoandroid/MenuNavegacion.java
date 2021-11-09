@@ -12,6 +12,7 @@ public class MenuNavegacion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_navegacion);
+        getSupportActionBar().hide();
     }
 
     public void crearTarea(View view) {
