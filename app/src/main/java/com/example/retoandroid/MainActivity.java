@@ -20,9 +20,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        preferences=getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
         et_P = findViewById(R.id.eT_P);
         et_N = findViewById(R.id.eT_N);
-        //setLogin("Admin","1234");
+        if (getLoginContraseña() == "") {
+            setLogin("Admin", "1234");
+        }
         getSupportActionBar().hide();
 
         AdminSQLiteOpenHelper sql = new AdminSQLiteOpenHelper(this,"bd_tareas",null,1);
@@ -46,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void setLogin(String usuario, String contraseña){
 
-
-        preferences=getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("user",usuario);
         editor.putString("pass",contraseña);
@@ -57,19 +58,14 @@ public class MainActivity extends AppCompatActivity {
 
     public String getLoginUsuario(){
 
-        preferences=getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
         String usuario = preferences.getString("user","");
-
-
         return usuario;
 
     }
 
     public String getLoginContraseña(){
 
-        preferences=getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
         String contraseña = preferences.getString("pass","");
-
 
         return contraseña;
 
