@@ -36,25 +36,26 @@ public class TareaDelListado extends AppCompatActivity {
 
         }
 
-        TextView txtNombre = new TextView(this);
-        txtNombre.setTextSize(40);
-        txtNombre.setText(t.getNombre());
+        if(t!=null){
 
-        TextView txtDescripcion = new TextView(this);
-        txtDescripcion.setTextSize(30);
-        txtDescripcion.setText(t.getDescripcion());
+            TextView txtNombre = findViewById(R.id.textViewNombreTarea);
+            txtNombre.setText(t.getNombre());
 
-        TextView txtFecha = new TextView(this);
-        txtFecha.setTextSize(30);
-        txtFecha.setText(t.getFecha());
+            TextView txtDescripcion = findViewById(R.id.textViewDescripcion);
+            txtDescripcion.setText(t.getDescripcion());
 
-        TextView txtPrioridad = new TextView(this);
-        txtPrioridad.setTextSize(30);
-        txtPrioridad.setText(t.getPrioridad());
+            TextView txtFecha = findViewById(R.id.textViewFechaTarea);
+            txtFecha.setText(t.getFecha());
 
-        TextView txtCoste = new TextView(this);
-        txtCoste.setTextSize(30);
-        txtCoste.setText("Tiene un coste de: "+t.getCoste());
+            TextView txtPrioridad = findViewById(R.id.textViewPrioridad);
+            txtPrioridad.setText(t.getPrioridad());
+
+            TextView txtCoste = findViewById(R.id.textViewPrecioTarea);
+            txtCoste.setText("Tiene un coste de: "+t.getCoste());
+
+        }
+
+
 
 
 
