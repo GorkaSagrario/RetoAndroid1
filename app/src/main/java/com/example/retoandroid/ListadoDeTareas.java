@@ -55,7 +55,8 @@ public class ListadoDeTareas extends AppCompatActivity {
             startActivity(i);
         }
         if (id==R.id.cPass) {
-
+            Intent i = new Intent(this, CambiarContrasena.class );
+            startActivity(i);
 
 
         }

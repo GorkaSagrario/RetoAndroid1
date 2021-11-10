@@ -13,6 +13,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private TextView et_N ;
     private TextView et_P;
+    private SharedPreferences preferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         et_P = findViewById(R.id.eT_P);
         et_N = findViewById(R.id.eT_N);
-        setLogin("Admin","1234");
+        //setLogin("Admin","1234");
         getSupportActionBar().hide();
 
         AdminSQLiteOpenHelper sql = new AdminSQLiteOpenHelper(this,"bd_tareas",null,1);
@@ -35,10 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(et_N.getText().toString().equals(getLoginUsuario()) && et_P.getText().toString().equals(getLoginContraseña())){
             startActivity(i);
-
         }else{
-
-
             notificacion.show();
         }
 
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public void setLogin(String usuario, String contraseña){
 
 
-        SharedPreferences preferences=getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
+        preferences=getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("user",usuario);
         editor.putString("pass",contraseña);
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     public String getLoginUsuario(){
 
-        SharedPreferences preferences=getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
+        preferences=getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
         String usuario = preferences.getString("user","");
 
 
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
     public String getLoginContraseña(){
 
-        SharedPreferences preferences=getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
+        preferences=getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
         String contraseña = preferences.getString("pass","");
 
 
