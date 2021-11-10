@@ -15,6 +15,6 @@ public class TareaDelListado extends AppCompatActivity {
 
 
     public void pVolver(View view) {
-        finishActivity(0);
+        finish();
     }
 }
