@@ -2,6 +2,7 @@ package com.example.retoandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -29,6 +30,8 @@ public class ListadoDeTareas extends AppCompatActivity {
         LinearLayout layout = (LinearLayout) findViewById(R.id.linearLayout);
         layout.setOrientation(LinearLayout.VERTICAL);  //Can also be done in xml by android:orientation="vertical"
 
+        Context c = this;
+
         for (int i = 0; i < arrayTareas.size(); i++) {
             LinearLayout row = new LinearLayout(this);
             row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -40,7 +43,10 @@ public class ListadoDeTareas extends AppCompatActivity {
                     @Override
                     public boolean onLongClick(View v) {
 
-                        t.mostrarTarea(txt.getText().toString(), arrayTareas);
+                        t.mostrarTarea(txt.getText().toString(),arrayTareas);
+                        Intent pantalla = new Intent(c, TareaDelListado.class);
+                        startActivity(pantalla);
+
 
                         return false;
                     }
