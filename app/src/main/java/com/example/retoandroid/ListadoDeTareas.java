@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 
@@ -16,6 +19,7 @@ public class ListadoDeTareas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TareaDelListado t = new TareaDelListado();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_de_tareas);
         AdminSQLiteOpenHelper sql = new AdminSQLiteOpenHelper(this,"bd_tareas",null,1);
@@ -31,7 +35,17 @@ public class ListadoDeTareas extends AppCompatActivity {
 
                 TextView txt = new TextView(this);
                 txt.setTextSize(20);
-                txt.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                txt.setOnLongClickListener(new View.OnLongClickListener(){
+                    @Override
+                    public boolean onLongClick(View v) {
+
+                        t.mostrarTarea(txt.getText().toString(), arrayTareas);
+
+                        return false;
+                    }
+                });
+
+            txt.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 txt.setText("\n"+arrayTareas.get(i).getNombre());
                 txt.setId(i + 1);
                 row.addView(txt);
@@ -68,5 +82,7 @@ public class ListadoDeTareas extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 
 }
