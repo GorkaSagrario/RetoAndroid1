@@ -21,17 +21,20 @@ public class CambiarContrasena extends AppCompatActivity {
 
     public void onClickBotonCambiar(View view) {
 
-        String contraVieja = findViewById(R.id.idContraAnterior).toString();
-        String contraNueva = findViewById(R.id.idContraNueva).toString();
+        TextView TVcontraVieja = findViewById(R.id.idContraAnterior);
+        TextView TVcontraNueva = findViewById(R.id.idContraNueva);
+
+        String contraVieja = String.valueOf(TVcontraVieja.getText()) ;
+        String contraNueva = String.valueOf(TVcontraNueva.getText());
+
         p = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
 
 
-
+    TextView tv = findViewById(R.id.textView5);
+    tv.setText(contraVieja);
 
     if(comprobarContrasena(contraVieja,contraNueva)){
-
         setLogin(getLoginUsuario(),contraNueva);
-
         finish();
     }
 
@@ -39,41 +42,27 @@ public class CambiarContrasena extends AppCompatActivity {
 
 
     public boolean comprobarContrasena(String contraVieja, String contraNueva){
-
-       String contrasenaActual_2 = getLoginContraseña();
-       boolean validado = false;
-
-        if(contraVieja.equals(contrasenaActual_2) && contraNueva != ""){
-
+        boolean validado = false;
+        if(contraVieja.equals(getLoginContraseña()) && contraNueva != ""){
         validado = true;
-
         }
-
         return validado;
-
     }
 
     public void setLogin(String usuario, String contraseña){
-
         SharedPreferences.Editor editor = p.edit();
         editor.putString("user",usuario);
         editor.putString("pass",contraseña);
-
         editor.apply();
     }
 
     public String getLoginUsuario(){
-
         String usuario = p.getString("user","");
         return usuario;
-
     }
 
     public String getLoginContraseña(){
-
         String contraseña = p.getString("pass","");
-
         return contraseña;
-
     }
 }
