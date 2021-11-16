@@ -44,7 +44,10 @@ public class ListadoDeTareas extends AppCompatActivity implements Serializable {
 
 
                 TextView txt = new TextView(this);
+                TextView br = new TextView(this);
+
                 txt.setTextSize(20);
+                br.setTextSize(15);
 
                 txt.setOnLongClickListener(new View.OnLongClickListener(){
                     @Override
@@ -71,8 +74,10 @@ public class ListadoDeTareas extends AppCompatActivity implements Serializable {
 
             txt.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 txt.setText(arrayTareas.get(i).getNombre());
+                br.setText("\n");
                 txt.setId(i + 1);
                 row.addView(txt);
+                row.addView(br);
 
             layout.addView(row);
         }

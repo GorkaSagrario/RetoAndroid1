@@ -37,19 +37,9 @@ public class TareaDelListado extends AppCompatActivity implements Serializable {
         ArrayList<Tarea> arrayTareas = getIntent().getExtras().getParcelableArrayList("miArray");
         String nombre = getIntent().getExtras().getString("nombre");
 
-
-
         Tarea t = null;
 
         for(int i = 0; i<arrayTareas.size(); i++){
-
-            Context context = getApplicationContext();
-            CharSequence text = arrayTareas.get(i).getNombre();
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(context, text, duration);
-            toast.show();
-
 
             if(arrayTareas.get(i).getNombre().equals(nombre)){
 
@@ -79,7 +69,7 @@ public class TareaDelListado extends AppCompatActivity implements Serializable {
             txtPrioridad.setText(t.getPrioridad());
 
             TextView txtCoste = findViewById(R.id.textViewPrecioTarea);
-            txtCoste.setText("Tiene un coste de: "+t.getCoste());
+            txtCoste.setText("Tiene un coste de: "+t.getCoste() + " €");
 
         }
 
