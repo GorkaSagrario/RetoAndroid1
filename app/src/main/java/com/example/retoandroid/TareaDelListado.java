@@ -3,6 +3,7 @@ package com.example.retoandroid;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,14 +11,18 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TareaDelListado extends AppCompatActivity {
+public class TareaDelListado extends AppCompatActivity implements Serializable {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarea_del_listado);
+
+    mostrarTarea();
+
     }
 
 
@@ -25,15 +30,30 @@ public class TareaDelListado extends AppCompatActivity {
         finish();
     }
 
-    public void mostrarTarea(String nombre,ArrayList<Tarea>arrayTareas){
+
+    public void mostrarTarea(){
+
+
+        ArrayList<Tarea> arrayTareas = getIntent().getExtras().getParcelableArrayList("miArray");
+        String nombre = getIntent().getExtras().getString("nombre");
+
 
 
         Tarea t = null;
 
         for(int i = 0; i<arrayTareas.size(); i++){
 
+            Context context = getApplicationContext();
+            CharSequence text = arrayTareas.get(i).getNombre();
+            int duration = Toast.LENGTH_SHORT;
 
-            if(arrayTareas.get(i).getNombre().toString().equalsIgnoreCase(nombre)){
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+
+
+            if(arrayTareas.get(i).getNombre().equals(nombre)){
+
+
                 t = arrayTareas.get(i);
                 i = arrayTareas.size();
 
@@ -43,14 +63,6 @@ public class TareaDelListado extends AppCompatActivity {
 
         }
 
-
-        //Simplemente sacar el .size da error y cierra la aplicación
-        if(arrayTareas.size()>0){
-
-            TextView txtNombre = findViewById(R.id.textViewNombreTarea);
-            txtNombre.setText("aaa");
-
-        }
 
         if(t!=null){
 
@@ -68,10 +80,6 @@ public class TareaDelListado extends AppCompatActivity {
 
             TextView txtCoste = findViewById(R.id.textViewPrecioTarea);
             txtCoste.setText("Tiene un coste de: "+t.getCoste());
-
-        }else{
-
-
 
         }
 

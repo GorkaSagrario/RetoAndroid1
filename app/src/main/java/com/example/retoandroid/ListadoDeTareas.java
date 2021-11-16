@@ -15,10 +15,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class ListadoDeTareas extends AppCompatActivity {
+
+public class ListadoDeTareas extends AppCompatActivity implements Serializable {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         TareaDelListado t = new TareaDelListado();
@@ -32,6 +35,9 @@ public class ListadoDeTareas extends AppCompatActivity {
 
         Context c = this;
 
+
+
+
         for (int i = 0; i < arrayTareas.size(); i++) {
             LinearLayout row = new LinearLayout(this);
             row.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -39,12 +45,23 @@ public class ListadoDeTareas extends AppCompatActivity {
 
                 TextView txt = new TextView(this);
                 txt.setTextSize(20);
+
                 txt.setOnLongClickListener(new View.OnLongClickListener(){
                     @Override
                     public boolean onLongClick(View v) {
 
-                        t.mostrarTarea(txt.getText().toString(),arrayTareas);
+
+
+
+                        Bundle b = new Bundle();
+                        String nombre = txt.getText().toString();
                         Intent pantalla = new Intent(c, TareaDelListado.class);
+
+                        b.putParcelableArrayList("miArray",arrayTareas);
+                        b.putString("nombre",nombre);
+
+                        pantalla.putExtras(b);
+
                         startActivity(pantalla);
 
 
@@ -53,7 +70,7 @@ public class ListadoDeTareas extends AppCompatActivity {
                 });
 
             txt.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                txt.setText("\n"+arrayTareas.get(i).getNombre());
+                txt.setText(arrayTareas.get(i).getNombre());
                 txt.setId(i + 1);
                 row.addView(txt);
 
