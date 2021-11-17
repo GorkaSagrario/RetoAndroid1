@@ -1,19 +1,18 @@
 package com.example.retoandroid;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Parcelable;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -49,9 +48,9 @@ public class ListadoDeTareas extends AppCompatActivity implements Serializable {
                 txt.setTextSize(20);
                 br.setTextSize(15);
 
-                txt.setOnLongClickListener(new View.OnLongClickListener(){
+                txt.setOnClickListener(new View.OnClickListener(){
                     @Override
-                    public boolean onLongClick(View v) {
+                    public void onClick(View v) {
 
 
 
@@ -68,9 +67,20 @@ public class ListadoDeTareas extends AppCompatActivity implements Serializable {
                         startActivity(pantalla);
 
 
-                        return false;
+
                     }
                 });
+
+            txt.setOnLongClickListener(new View.OnLongClickListener(){
+                @Override
+                public boolean onLongClick(View v) {
+
+
+                    registerForContextMenu(txt);
+
+                    return false;
+                }
+            });
 
             txt.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
                 txt.setText(arrayTareas.get(i).getNombre());
@@ -81,6 +91,33 @@ public class ListadoDeTareas extends AppCompatActivity implements Serializable {
 
             layout.addView(row);
         }
+
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_contextual, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item){
+
+        switch (item.getItemId()){
+
+            case R.id.Modificar:
+
+                
+
+            case R.id.Eliminar:
+
+
+
+        }
+
+        return false;
 
     }
 
