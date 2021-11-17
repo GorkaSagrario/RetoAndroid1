@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
-        android:hint="Nombre de la tarea"
+        android:hint="@string/nTarea"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Coste"
+        android:hint="@string/coste"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Fecha AAAA-MM-DD"
+        android:hint="@string/fechaConFormato"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Descripcion"
+        android:hint="@string/descripcion"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -80,13 +80,13 @@
             android:id="@+id/radioHecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hecha" />
+            android:text="@string/hecha" />
 
         <RadioButton
             android:id="@+id/radioSinHacer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sin hacer" />
+            android:text="@string/sinHacer" />
     </RadioGroup>
 
     <Button
@@ -96,7 +96,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="72dp"
         android:onClick="pLogin"
-        android:text="Salir"
+        android:text="@string/salir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="60dp"
-        android:text="Enviar"
+        android:text="@string/enviar"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.813"
         app:layout_constraintStart_toStartOf="parent"

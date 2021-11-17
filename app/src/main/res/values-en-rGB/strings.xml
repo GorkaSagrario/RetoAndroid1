@@ -4,4 +4,27 @@
     <string name="Inicio">Log in</string>
     <string name="Usuario">User</string>
     <string name="Contraseña">Password</string>
+    <string name="fechaConFormato">Date AAAA-MM-DD</string>
+    <string name="salir">Exit</string>
+    <string name="enviar">Send</string>
+    <string name="contraVieja">Old Password</string>
+    <string name="nuevaContra">New Password</string>
+    <string name="cambiar">Change</string>
+    <string name="cambiarContra">Change Password</string>
+    <string name="fecha">Date</string>
+    <string name="prioridad">Priority</string>
+    <string name="nombreTarea">Name</string>
+    <string name="hecha">Done</string>
+    <string name="desconectar">Disconnect</string>
+    <string name="nuevaTarea">New Task</string>
+    <string name="volver">" Return"</string>
+    <string name="baja">Low</string>
+    <string name="media">Medium</string>
+    <string name="alta">High</string>
+    <string name="urgente">Urgent</string>
+    <string name="sinHacer">Not done</string>
+    <string name="coste">Cost</string>
+    <string name="descripcion">Description</string>
+    <string name="nTarea">Task Name</string>
+    <string name="AcercaDe">About</string>
 </resources>

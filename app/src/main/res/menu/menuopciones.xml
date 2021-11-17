@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nTarea"
-        android:title="Nueva Tarea" />
+        android:title="@string/nuevaTarea"/>
     <item
         android:id="@+id/cPass"
-        android:title="Cambiar Contraseña" />
+        android:title="@string/cambiarContra" />
     <item
         android:id="@+id/acercaDe"
-        android:title="Acerca de" />
+        android:title="@string/AcercaDe" />
     <item
         android:id="@+id/desconectar"
-        android:title="Desconectar" />
+        android:title="@string/desconectar" />
 </menu>

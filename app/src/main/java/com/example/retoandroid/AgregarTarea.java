@@ -38,7 +38,7 @@ public class AgregarTarea extends AppCompatActivity {
         coste = findViewById(R.id.eT_Coste);
 
         spinner =findViewById(R.id.spinner);
-        String []option={"Urgente","Alta","Media","Baja"};
+        String []option={getString(R.string.urgente),getString(R.string.alta),getString(R.string.media),getString(R.string.baja)};
         ArrayAdapter<String> adapter = new
                 ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, option);
         spinner.setAdapter(adapter);

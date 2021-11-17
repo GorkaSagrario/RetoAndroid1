@@ -3,13 +3,27 @@
     <string name="Inicio">Inicio</string>
     <string name="Usuario">Usuario</string>
     <string name="Contraseña">Contraseña</string>
-    <string name="title_activity_cambiar_contrasena">CambiarContrasena</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="nTarea">Nombre de la tarea</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="fechaConFormato">Fecha AAAA-MM-DD</string>
+    <string name="coste">Coste</string>
+    <string name="hecha">Hecha</string>
+    <string name="sinHacer">Sin hacer</string>
+    <string name="enviar">Enviar</string>
+    <string name="salir">Salir</string>
+    <string name="urgente">Urgente</string>
+    <string name="alta">Alta</string>
+    <string name="media">Media</string>
+    <string name="baja">Baja</string>
+    <string name="fecha">Fecha</string>
+    <string name="prioridad">Prioridad</string>
+    <string name="volver">Volver</string>
+    <string name="nombreTarea">Nombre</string>
+    <string name="cambiarContra">Cambiar contraseña</string>
+    <string name="contraVieja">Contraseña anterior</string>
+    <string name="nuevaContra">Constraseña nueva</string>
+    <string name="cambiar">Cambiar</string>
+    <string name="nuevaTarea">Nueva Tarea</string>
+    <string name="AcercaDe">Acerca de</string>
+    <string name="desconectar">Desconectar</string>
 </resources>
