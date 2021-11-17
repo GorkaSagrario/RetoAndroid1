@@ -1,10 +1,14 @@
 package com.example.retoandroid;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -13,6 +17,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -20,6 +27,8 @@ import java.util.ArrayList;
 
 
 public class ListadoDeTareas extends AppCompatActivity implements Serializable {
+
+    private String nombreAEliminar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +42,12 @@ public class ListadoDeTareas extends AppCompatActivity implements Serializable {
         layout.setOrientation(LinearLayout.VERTICAL);  //Can also be done in xml by android:orientation="vertical"
 
         Context c = this;
-
+        TextView titulo = new TextView(this);
+        titulo.setTextSize(23);
+        titulo.setTextColor(Color.BLACK);
+        titulo.setText("Listado de tareas");
+        titulo.setTypeface(null, Typeface.BOLD);
+        layout.addView(titulo);
 
 
 
@@ -77,6 +91,7 @@ public class ListadoDeTareas extends AppCompatActivity implements Serializable {
 
 
                     registerForContextMenu(txt);
+                    nombreAEliminar = txt.getText().toString();
 
                     return false;
                 }
@@ -109,10 +124,11 @@ public class ListadoDeTareas extends AppCompatActivity implements Serializable {
 
             case R.id.Modificar:
 
-                
+
 
             case R.id.Eliminar:
 
+            eliminarTarea(nombreAEliminar);
 
 
         }
@@ -125,6 +141,32 @@ public class ListadoDeTareas extends AppCompatActivity implements Serializable {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menuopciones, menu);
         return true;
+    }
+
+    public void eliminarTarea(String nombre){
+
+        AdminSQLiteOpenHelper ad = new AdminSQLiteOpenHelper(this,
+                "bd_tareas", null, 1);
+        SQLiteDatabase bd = ad.getWritableDatabase();
+        int cant = bd.delete("tareas", "nombre = '"+nombre+"'", null);
+        bd.close();
+
+        if (cant == 1){
+
+            Toast.makeText(this, "Se ha borrado la tarea", Toast.LENGTH_SHORT).show();
+            finish();
+            startActivity(getIntent());
+            
+        }else{
+
+            Toast.makeText(this, "No se ha podido borrar la tarea", Toast.LENGTH_SHORT).show();
+        }
+
+
+
+
+
+
     }
 
     @Override
