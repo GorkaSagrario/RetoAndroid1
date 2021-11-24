@@ -27,6 +27,4 @@
     <string name="descripcion">Description</string>
     <string name="nTarea">Task Name</string>
     <string name="AcercaDe">About</string>
-    <string name="modificar">Modify</string>
-    <string name="eliminar">Delete</string>
 </resources>

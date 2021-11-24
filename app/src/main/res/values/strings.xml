@@ -26,6 +26,4 @@
     <string name="nuevaTarea">Nueva Tarea</string>
     <string name="AcercaDe">Acerca de</string>
     <string name="desconectar">Desconectar</string>
-    <string name="modificar">Modificar</string>
-    <string name="eliminar">Eliminar</string>
 </resources>

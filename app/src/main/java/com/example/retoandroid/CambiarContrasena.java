@@ -30,6 +30,8 @@ public class CambiarContrasena extends AppCompatActivity {
         p = getSharedPreferences("sharedprefs", Context.MODE_PRIVATE);
 
 
+    TextView tv = findViewById(R.id.textView5);
+    tv.setText(contraVieja);
 
     if(comprobarContrasena(contraVieja,contraNueva)){
         setLogin(getLoginUsuario(),contraNueva);
