@@ -183,6 +183,8 @@ public class ListadoDeTareas extends AppCompatActivity implements Serializable {
 
         }
         if (id==R.id.acercaDe) {
+            Intent i = new Intent(this, AcercaDe.class );
+            startActivity(i);
 
         }
         if (id==R.id.desconectar) {

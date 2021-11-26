@@ -27,4 +27,6 @@
     <string name="descripcion">Description</string>
     <string name="nTarea">Task Name</string>
     <string name="AcercaDe">About</string>
+    <string name="ContenidoAcercaDe">Version: 1.0</string>
+    <string name="HechoPor">Created by: Unai Barrigon and Gorka Sagrario</string>
 </resources>

@@ -32,10 +32,9 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="116dp"
         android:text="@string/descripcion"
         app:layout_constraintEnd_toStartOf="@+id/textViewDescripcion"
-        app:layout_constraintHorizontal_bias="0.707"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,11 +52,9 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="244dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginTop="192dp"
         android:text="@string/fecha"
         app:layout_constraintEnd_toStartOf="@+id/textViewFechaTarea"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,18 +67,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDescripcion" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="320dp"
-        android:text="Prioridad"
-        app:layout_constraintEnd_toStartOf="@+id/textViewPrioridad"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewPrioridad"
@@ -97,11 +82,11 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="396dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="340dp"
         android:text="@string/coste"
         app:layout_constraintEnd_toStartOf="@+id/textViewPrecioTarea"
-        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -119,7 +104,7 @@
         android:id="@+id/textViewNombreTarea"
         android:layout_width="180dp"
         android:layout_height="43dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -130,9 +115,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="272dp"
         android:text="@string/prioridad"
-        app:layout_constraintEnd_toStartOf="@+id/textViewPrioridad"
+        app:layout_constraintEnd_toStartOf="@+id/textViewFechaTarea"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
